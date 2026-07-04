@@ -10,6 +10,7 @@ import Contact from './pages/Contact.jsx'
 import Pay from './pages/Pay.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
+import ResourceArticle from './pages/ResourceArticle.jsx'
 import NotFound from './pages/NotFound.jsx'
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/pay" element={<Pay />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/resources/:slug" element={<ResourceArticle />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

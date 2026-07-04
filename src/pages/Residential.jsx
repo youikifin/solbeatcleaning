@@ -31,10 +31,11 @@ export default function Residential() {
         eyebrow="Residential cleaning"
         title={
           <>
-            Your home, cleaned like it&rsquo;s <span className="serif-i">inspected</span>
+            House cleaning in Steinbach, done like an{' '}
+            <span className="serif-i">inspection</span>
           </>
         }
-        lede="From a single spring refresh to a standing schedule, every home gets the same detailed checklist — and the supplies are on us."
+        lede="From a single spring refresh to recurring housekeeping across the Eastman region, every home gets the same detailed checklist — and the supplies are on us."
       />
 
       <section className="section section--tight" aria-label="Residential services">
@@ -87,7 +88,7 @@ export default function Residential() {
           <Reveal rotate={2} delay={0.15}>
             <TapedPhoto tilt={2} caption="every corner, every time" tapeTones={['terra', 'gold']}>
               <PlaceholderPhoto
-                alt="Sparkling clean bathtub and tiled bathroom wall"
+                alt="Sparkling clean bathtub and tiled wall after a Steinbach house cleaning service"
                 label={['a bathtub,', 'actually clean']}
                 tone="cream"
                 ratio={[4, 5]}

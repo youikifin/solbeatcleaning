@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Nav from './Nav.jsx'
 import Footer from './Footer.jsx'
 import CookieConsent from './CookieConsent.jsx'
+import { applyMeta } from '../lib/seo.js'
 
 export default function Layout() {
   const { pathname } = useLocation()
@@ -10,6 +11,7 @@ export default function Layout() {
   const firstRender = useRef(true)
 
   useEffect(() => {
+    applyMeta(pathname)
     if (firstRender.current) {
       firstRender.current = false
       return

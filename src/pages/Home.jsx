@@ -37,7 +37,7 @@ export default function Home() {
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <Reveal as="p" className="eyebrow" y={16}>
-              Steinbach, Manitoba · Residential &amp; Commercial
+              Cleaning services in Steinbach, Manitoba
             </Reveal>
             <h1 className="h-display hero-title">
               {heroWords.map((w, i) => (
@@ -64,8 +64,8 @@ export default function Home() {
             <Reveal as="p" className="lede hero-lede" delay={0.65} y={20}>
               SolBeat Cleaning is a one-woman company founded by{' '}
               <strong>Beatrice Akinleye</strong> — a decade of professional cleaning and
-              quality-assurance experience, now caring for homes and businesses across
-              Steinbach and southeastern Manitoba.
+              quality-assurance experience, now providing housekeeping and commercial
+              cleaning across Steinbach and the Eastman region.
             </Reveal>
             <Reveal className="hero-actions" delay={0.75} y={18}>
               <Magnetic>
@@ -85,7 +85,7 @@ export default function Home() {
               <Reveal rotate={reduce ? 0 : 3} delay={0.35}>
                 <TapedPhoto tilt={2.2} caption="Beatrice, making a kitchen shine" tapeTones={['gold', 'sage']}>
                   <PlaceholderPhoto
-                    alt="Beatrice Akinleye wiping down a bright kitchen counter"
+                    alt="Beatrice Akinleye providing house cleaning services in a Steinbach kitchen"
                     label={['Beatrice at work', '(real photo coming soon)']}
                     tone="terracotta"
                     ratio={[4, 5]}
@@ -126,7 +126,7 @@ export default function Home() {
           <Reveal rotate={-1.5}>
             <TapedPhoto tilt={-2} caption="est. last year, Steinbach MB" tapeTones={['sage', 'gold']}>
               <PlaceholderPhoto
-                alt="Portrait of Beatrice Akinleye, founder of SolBeat Cleaning"
+                alt="Portrait of Beatrice Akinleye, founder of SolBeat Cleaning, a Steinbach cleaning services company"
                 label={['Beatrice Akinleye', 'Founder & CEO']}
                 tone="gold"
                 ratio={[4, 3]}
@@ -158,7 +158,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal as="p" className="eyebrow" y={18}>What we clean</Reveal>
           <Reveal as="h2" className="h-xl paths-title" delay={0.08} id="paths-heading">
-            Two kinds of spaces, one standard
+            Cleaning services for Steinbach homes and businesses
           </Reveal>
           <div className="paths">
             <PathCard
@@ -167,7 +167,7 @@ export default function Home() {
               tilt={-1}
               title="Residential"
               hand="homes, condos & farmhouses"
-              alt="A tidy, sunlit living room after a residential clean"
+              alt="A tidy, sunlit living room after a residential house cleaning in Steinbach"
               photoLabel="a freshly cleaned living room"
               items={residentialServices.slice(0, 4).map((s) => s.name)}
               more={residentialServices.length - 4}
@@ -178,7 +178,7 @@ export default function Home() {
               tilt={1.2}
               title="Commercial"
               hand="offices, shops & common areas"
-              alt="A clean office lobby with reception desk"
+              alt="A clean office lobby after commercial cleaning in southern Manitoba"
               photoLabel="a spotless front lobby"
               items={commercialServices.slice(0, 4).map((s) => s.name)}
               more={commercialServices.length - 4}

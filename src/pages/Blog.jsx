@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import { blogPosts } from '../content/content.js'
+import { blogPosts, resources } from '../content/content.js'
 import PageHero from '../components/PageHero.jsx'
 import NewsletterSignup from '../components/NewsletterSignup.jsx'
 import { Reveal } from '../components/motion-helpers.jsx'
-import { Tape, PlaceholderPhoto } from '../components/Paper.jsx'
+import { TornEdge, Tape, PlaceholderPhoto } from '../components/Paper.jsx'
 import './blog.css'
 
 const tones = ['terracotta', 'sage', 'gold']
@@ -56,6 +56,40 @@ export default function Blog() {
           ))}
         </div>
       </section>
+
+      {/* Resources & guides */}
+      <TornEdge color="var(--paper-2)" />
+      <section className="section section--deep" aria-labelledby="resources-heading">
+        <div className="wrap">
+          <Reveal as="p" className="eyebrow" y={18}>Resources &amp; guides</Reveal>
+          <Reveal as="h2" className="h-xl" delay={0.06} id="resources-heading">
+            Running a small business too?
+          </Reveal>
+          <Reveal as="p" className="lede resources-lede" delay={0.12}>
+            Notes from building SolBeat — practical guides on putting AI to work in a
+            small business, written for owners, not engineers.
+          </Reveal>
+          <div className="resource-grid">
+            {resources.map((r, i) => (
+              <Reveal
+                as="article"
+                key={r.slug}
+                className="resource-card pcard"
+                delay={0.08 + i * 0.07}
+                rotate={i % 2 ? 1 : -1}
+              >
+                <p className="resource-tag">AI for small businesses</p>
+                <h3 className="h-md">{r.title}</h3>
+                <p className="resource-blurb">{r.blurb}</p>
+                <Link className="resource-more" to={`/resources/${r.slug}`}>
+                  Read more →
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+      <TornEdge color="var(--paper-2)" flip />
 
       <NewsletterSignup />
     </>

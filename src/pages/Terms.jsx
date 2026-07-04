@@ -66,16 +66,6 @@ export default function Terms() {
           </Reveal>
 
           <Reveal as="div" className="legal-block" y={18}>
-            <h2>Prepaid services and consulting sessions</h2>
-            <p>
-              Any prepaid service or consulting session must be booked within{' '}
-              <strong>12 months of purchase</strong>. After 12 months, unredeemed
-              purchases expire and are non-refundable, except where the law says
-              otherwise.
-            </p>
-          </Reveal>
-
-          <Reveal as="div" className="legal-block" y={18}>
             <h2>Access, safety, and insurance</h2>
             <p>
               We are background-checked, trained, and insured. If you won&rsquo;t be home
@@ -108,7 +98,7 @@ export default function Terms() {
             <h2>Questions</h2>
             <p>
               Email{' '}
-              <a href="mailto:beatrice@solbeatcleaning.com">beatrice@solbeatcleaning.com</a>{' '}
+              <a href="mailto:beatrice@solbeatcleaning.online">beatrice@solbeatcleaning.online</a>{' '}
               or call +1 (204) 381-8505. Our <Link to="/privacy">Privacy Policy</Link>{' '}
               explains how we handle your information.
             </p>

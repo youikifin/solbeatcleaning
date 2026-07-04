@@ -31,7 +31,7 @@ export default function Privacy() {
               Akinleye, based at 300 First St, Steinbach, MB R5G 0T6, Canada. This policy
               covers our website, <strong>solbeatcleaning.online</strong>, and the forms
               on it. For anything privacy-related, email{' '}
-              <a href="mailto:beatrice@solbeatcleaning.com">beatrice@solbeatcleaning.com</a>.
+              <a href="mailto:beatrice@solbeatcleaning.online">beatrice@solbeatcleaning.online</a>.
             </p>
           </Reveal>
 
@@ -84,7 +84,7 @@ export default function Privacy() {
               — the consent boxes on our forms are never pre-ticked. You can withdraw
               that consent at any time by clicking the unsubscribe link in any email we
               send, or by emailing{' '}
-              <a href="mailto:beatrice@solbeatcleaning.com">beatrice@solbeatcleaning.com</a>.
+              <a href="mailto:beatrice@solbeatcleaning.online">beatrice@solbeatcleaning.online</a>.
               Unsubscribing stops all marketing; it does not affect emails we must send
               about a service you booked (like confirming an appointment).
             </p>
@@ -129,7 +129,7 @@ export default function Privacy() {
             </ul>
             <p>
               To exercise any of these, email{' '}
-              <a href="mailto:beatrice@solbeatcleaning.com">beatrice@solbeatcleaning.com</a>{' '}
+              <a href="mailto:beatrice@solbeatcleaning.online">beatrice@solbeatcleaning.online</a>{' '}
               — you&rsquo;ll get a response within 30 days, usually much sooner.
             </p>
           </Reveal>

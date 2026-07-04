@@ -79,6 +79,60 @@
   }
 }
 
+/* Resources & guides */
+
+.resources-lede {
+  margin-top: 14px;
+}
+
+.resource-grid {
+  margin-top: clamp(28px, 4vw, 48px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.resource-tag {
+  background: var(--gold-soft);
+  color: var(--terracotta-2);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 6px 3px 7px 4px;
+}
+
+.resource-blurb {
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+.resource-more {
+  margin-top: auto;
+  padding-top: 6px;
+  font-weight: 700;
+  color: var(--terracotta-2);
+  border-bottom: 2px solid var(--gold);
+}
+
+.resource-more:hover {
+  color: var(--terracotta);
+}
+
+@media (max-width: 960px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Blog post */
 
 .post-hero {

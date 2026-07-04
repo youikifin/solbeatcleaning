@@ -341,6 +341,32 @@ export const blogPosts = [
   },
 ]
 
+/* ------------------------------------------------------------
+   Resources & guides — placeholder article cards (linked from the
+   Blog page). Full articles are stubs for now; TODO: write the
+   real guides and expand each stub page.
+   ------------------------------------------------------------ */
+export const resources = [
+  {
+    slug: 'ai-for-small-businesses-starting-guide',
+    title: 'AI for Small Businesses: A Plain-English Starting Guide',
+    blurb:
+      'What AI actually is, what it can (and can’t) do for a small local business, and the first three things worth trying this week — no jargon, no hype.',
+  },
+  {
+    slug: 'ai-saves-hours-one-woman-business',
+    title: '5 Ways a One-Woman Business Uses AI to Save Hours Every Week',
+    blurb:
+      'From drafting estimates to answering common customer questions, here’s how solo business owners are quietly winning back their evenings with AI.',
+  },
+  {
+    slug: 'ai-tools-worth-paying-for',
+    title: 'AI Tools for Small Service Businesses: What’s Worth Paying For',
+    blurb:
+      'Free tiers, trials, and subscriptions — a practical look at which AI tools earn their keep for a small service business, and which to skip.',
+  },
+]
+
 /* Lead magnet */
 export const leadMagnet = {
   title: 'The Seasonal Deep-Clean Guide',

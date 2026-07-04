@@ -16,7 +16,7 @@ export default function Commercial() {
             Spaces that work as hard as <span className="serif-i">you</span> do
           </>
         }
-        lede="Offices, shops, and common areas across the Steinbach region — cleaned on a documented checklist, scoped in writing, on a schedule that stays out of your way."
+        lede="Commercial cleaning services for Steinbach and southern Manitoba — offices, shops, and common areas cleaned on a documented checklist, scoped in writing, on a schedule that stays out of your way."
       />
 
       <section className="section section--tight" aria-label="Commercial services">
@@ -55,7 +55,7 @@ export default function Commercial() {
           <Reveal rotate={-2}>
             <TapedPhoto tilt={-2} caption="checklists you can audit" tapeTones={['sage', 'cream']}>
               <PlaceholderPhoto
-                alt="Beatrice cleaning the glass doors of a commercial building entrance"
+                alt="Beatrice cleaning the glass entrance doors of a Steinbach commercial building"
                 label={['a common area,', 'kept presentable']}
                 tone="sage"
                 ratio={[4, 3]}
