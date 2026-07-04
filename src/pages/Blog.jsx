@@ -63,11 +63,11 @@ export default function Blog() {
         <div className="wrap">
           <Reveal as="p" className="eyebrow" y={18}>Resources &amp; guides</Reveal>
           <Reveal as="h2" className="h-xl" delay={0.06} id="resources-heading">
-            Running a small business too?
+            Cleaning for residential suites
           </Reveal>
           <Reveal as="p" className="lede resources-lede" delay={0.12}>
-            Notes from building SolBeat — practical guides on putting AI to work in a
-            small business, written for owners, not engineers.
+            Guides for the smaller spaces we clean — apartments, condos, and rental
+            suites — written for tenants, landlords, and property managers alike.
           </Reveal>
           <div className="resource-grid">
             {resources.map((r, i) => (
@@ -78,7 +78,7 @@ export default function Blog() {
                 delay={0.08 + i * 0.07}
                 rotate={i % 2 ? 1 : -1}
               >
-                <p className="resource-tag">AI for small businesses</p>
+                <p className="resource-tag">Residential suites</p>
                 <h3 className="h-md">{r.title}</h3>
                 <p className="resource-blurb">{r.blurb}</p>
                 <Link className="resource-more" to={`/resources/${r.slug}`}>

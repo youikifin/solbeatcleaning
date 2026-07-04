@@ -19,7 +19,7 @@ export default function ResourceArticle() {
         <div className="wrap post-hero-inner">
           <Reveal as="p" className="post-meta" y={16}>
             <Link to="/blog" className="post-back">← Blog &amp; resources</Link>
-            <span className="blog-card-tag">AI for small businesses</span>
+            <span className="blog-card-tag">Residential suites</span>
           </Reveal>
           <Reveal as="h1" className="h-xl post-title" delay={0.08}>
             {resource.title}

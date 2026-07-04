@@ -342,28 +342,28 @@ export const blogPosts = [
 ]
 
 /* ------------------------------------------------------------
-   Resources & guides — placeholder article cards (linked from the
-   Blog page). Full articles are stubs for now; TODO: write the
-   real guides and expand each stub page.
+   Resources & guides — "Cleaning for residential suites" article
+   cards (linked from the Blog page). Full articles are stubs for
+   now; TODO: write the real guides and expand each stub page.
    ------------------------------------------------------------ */
 export const resources = [
   {
-    slug: 'ai-for-small-businesses-starting-guide',
-    title: 'AI for Small Businesses: A Plain-English Starting Guide',
+    slug: 'residential-suite-cleaning-checklist',
+    title: 'The Residential Suite Cleaning Checklist: Small Space, Big Standard',
     blurb:
-      'What AI actually is, what it can (and can’t) do for a small local business, and the first three things worth trying this week — no jargon, no hype.',
+      'A room-by-room checklist made for apartments, condos, and basement suites — where less square footage means every corner shows.',
   },
   {
-    slug: 'ai-saves-hours-one-woman-business',
-    title: '5 Ways a One-Woman Business Uses AI to Save Hours Every Week',
+    slug: 'preparing-rental-suite-between-tenants',
+    title: 'Move-In Ready: Preparing a Rental Suite Between Tenants',
     blurb:
-      'From drafting estimates to answering common customer questions, here’s how solo business owners are quietly winning back their evenings with AI.',
+      'For landlords and property managers: the turnover clean that protects your listing photos, your inspection, and your next tenant’s first impression.',
   },
   {
-    slug: 'ai-tools-worth-paying-for',
-    title: 'AI Tools for Small Service Businesses: What’s Worth Paying For',
+    slug: 'weekly-cleaning-routine-small-suites',
+    title: 'A Weekly Routine That Keeps a Small Suite Guest-Ready',
     blurb:
-      'Free tiers, trials, and subscriptions — a practical look at which AI tools earn their keep for a small service business, and which to skip.',
+      'Fifteen focused minutes a day beats a lost Saturday. A realistic weekly rhythm for busy people living in suites and condos.',
   },
 ]
 

@@ -42,8 +42,6 @@ export default function Footer() {
               <li><Link className="footer-link" to="/blog">Blog</Link></li>
               <li><Link className="footer-link" to="/contact">Get a free estimate</Link></li>
               <li><Link className="footer-link" to="/pay">Pay an invoice</Link></li>
-              <li><Link className="footer-link" to="/privacy">Privacy Policy</Link></li>
-              <li><Link className="footer-link" to="/terms">Terms &amp; Conditions</Link></li>
             </ul>
           </div>
 
