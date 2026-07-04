@@ -1,0 +1,135 @@
+/* Shared styles for the Residential & Commercial service pages. */
+
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.8vw, 36px);
+}
+
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.svc-card p {
+  color: var(--ink-2);
+  font-size: 15.5px;
+}
+
+.svc-num {
+  font: 600 15px/1 var(--serif);
+  color: var(--terracotta);
+  background: var(--gold-soft);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-num--sage {
+  color: var(--sage-2);
+  background: rgba(125, 139, 102, 0.18);
+}
+
+.svc-card--cta {
+  background: var(--terracotta);
+  border: none;
+  border-radius: var(--cut);
+  padding: clamp(22px, 3vw, 34px);
+  color: #fff2e3;
+  box-shadow: 0 12px 26px rgba(156, 74, 37, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.svc-card--cta p {
+  color: rgba(255, 242, 227, 0.92);
+}
+
+.svc-cta-hand {
+  font-size: 24px;
+  color: #ffe4b8 !important;
+}
+
+.svc-card--cta .btn {
+  background: var(--ink);
+  box-shadow: 0 3px 0 #14100a, 0 10px 22px rgba(0, 0, 0, 0.25);
+  margin-top: 6px;
+}
+
+.svc-card--cta .btn:hover {
+  background: #443626;
+}
+
+/* how it works */
+.svc-how-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: center;
+}
+
+.svc-how-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.svc-steps {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.svc-steps li {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.svc-step-num {
+  font: 600 30px/1 var(--serif);
+  color: var(--terracotta);
+  flex-shrink: 0;
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+.svc-steps p {
+  color: var(--ink-2);
+  margin-top: 6px;
+  max-width: 48ch;
+}
+
+.svc-ticker {
+  padding-block: clamp(30px, 5vw, 60px) clamp(50px, 7vw, 90px);
+}
+
+@media (max-width: 980px) {
+  .svc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .svc-how-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .svc-grid {
+    grid-template-columns: 1fr;
+  }
+}

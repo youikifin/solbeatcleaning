@@ -1,0 +1,82 @@
+.phero {
+  position: relative;
+  background: var(--paper-2);
+  padding: clamp(64px, 9vw, 120px) 0 clamp(46px, 6vw, 84px);
+  overflow: clip;
+}
+
+.phero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.phero-title {
+  max-width: 15ch;
+}
+
+.phero-lede {
+  max-width: 58ch;
+}
+
+/* drifting paper cutouts */
+.phero-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.phero-shape span {
+  display: block;
+  box-shadow: 0 10px 26px rgba(46, 36, 24, 0.12);
+}
+
+.phero-shape--a {
+  top: 12%;
+  right: 6%;
+}
+
+.phero-shape--a span {
+  width: clamp(120px, 16vw, 230px);
+  height: clamp(120px, 16vw, 230px);
+  border-radius: 50%;
+  rotate: 8deg;
+}
+
+.phero--sage .phero-shape--a span {
+  background: var(--sage);
+  opacity: 0.4;
+}
+
+.phero--terra .phero-shape--a span {
+  background: var(--terracotta);
+  opacity: 0.3;
+}
+
+.phero--gold .phero-shape--a span {
+  background: var(--gold);
+  opacity: 0.35;
+}
+
+.phero-shape--b {
+  bottom: 4%;
+  right: 22%;
+}
+
+.phero-shape--b span {
+  width: clamp(80px, 10vw, 150px);
+  height: clamp(60px, 8vw, 110px);
+  background: var(--card);
+  rotate: -9deg;
+  border-radius: 6px 14px 5px 12px;
+  opacity: 0.85;
+}
+
+@media (max-width: 720px) {
+  .phero-shape--b {
+    display: none;
+  }
+}

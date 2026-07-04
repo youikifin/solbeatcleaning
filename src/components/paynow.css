@@ -1,0 +1,116 @@
+.pay-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(30px, 5vw, 76px);
+  align-items: center;
+}
+
+/* the receipt */
+.pay-receipt {
+  position: relative;
+  justify-self: center;
+  width: min(320px, 84vw);
+  background: var(--card);
+  padding: 26px 24px 18px;
+  box-shadow: var(--shadow-soft);
+  /* torn bottom edge */
+  clip-path: polygon(
+    0 0, 100% 0, 100% 96%, 94% 99%, 87% 96.5%, 79% 99.5%, 71% 97%, 62% 100%,
+    53% 97%, 44% 99.5%, 36% 96.5%, 27% 99.5%, 19% 97%, 10% 100%, 4% 97.5%, 0 99.5%
+  );
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--ink);
+}
+
+.pay-receipt-head {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.pay-receipt-sub {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin-top: 4px;
+}
+
+.pay-receipt-rule {
+  border-top: 2px dashed var(--line);
+  margin: 14px 0;
+}
+
+.pay-receipt-lines div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 3px 0;
+}
+
+.pay-receipt-lines dd {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.pay-receipt-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 15.5px;
+}
+
+.pay-receipt-thanks {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  margin: 16px 0 6px;
+}
+
+/* copy side */
+.pay-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.pay-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.pay-btn {
+  font-size: 16.5px;
+}
+
+.pay-alt {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  max-width: 30ch;
+}
+
+.pay-alt-link {
+  font-weight: 700;
+  color: var(--terracotta-2);
+  border-bottom: 2px solid var(--gold);
+}
+
+.pay-fine {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  border-left: 3px solid var(--gold);
+  padding-left: 14px;
+  max-width: 52ch;
+}
+
+@media (max-width: 860px) {
+  .pay-grid {
+    grid-template-columns: 1fr;
+  }
+  .pay-receipt {
+    order: 2;
+  }
+}
