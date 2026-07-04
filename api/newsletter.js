@@ -17,12 +17,15 @@
 
 const OWNER_EMAIL = process.env.OWNER_EMAIL || 'youikifn151@gmail.com'
 const FROM = process.env.RESEND_FROM || 'SolBeat Cleaning <onboarding@resend.dev>'
+// Strip whitespace/invisible characters (e.g. a pasted BOM) — they make
+// the Authorization header invalid with a confusing ByteString error.
+const RESEND_KEY = (process.env.RESEND_API_KEY || '').replace(/[^\x21-\x7E]/g, '')
 
 async function sendEmail({ to, subject, html, replyTo }) {
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      Authorization: `Bearer ${RESEND_KEY}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ from: FROM, to: [to], subject, html, reply_to: replyTo }),
@@ -38,7 +41,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
-  if (!process.env.RESEND_API_KEY) {
+  if (!RESEND_KEY) {
     return res.status(500).json({
       error: 'Email is not configured yet (missing RESEND_API_KEY). Please call +1 (204) 381-8505.',
     })
