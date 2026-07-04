@@ -56,6 +56,16 @@ export default function Footer() {
 
         <div className="wrap footer-bottom">
           <p>© {new Date().getFullYear()} SolBeat Cleaning Inc. · Steinbach, Manitoba</p>
+          <nav className="footer-legal" aria-label="Legal">
+            <Link className="footer-link" to="/privacy">Privacy Policy</Link>
+            <Link className="footer-link" to="/terms">Terms &amp; Conditions</Link>
+            <button
+              className="footer-link footer-cookie-btn"
+              onClick={() => window.dispatchEvent(new Event('sb-cookie-preferences'))}
+            >
+              Cookie preferences
+            </button>
+          </nav>
           <p>Founded &amp; operated by Beatrice Akinleye</p>
         </div>
       </div>

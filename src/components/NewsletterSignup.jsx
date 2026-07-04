@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { subscribeNewsletter } from '../lib/api.js'
 import { Reveal, EASE } from './motion-helpers.jsx'
 import { Tape } from './Paper.jsx'
+import ConsentFields from './ConsentFields.jsx'
 import './forms.css'
 
 const EMAIL_RE = /^\S+@\S+\.\S+$/
@@ -10,6 +11,7 @@ const EMAIL_RE = /^\S+@\S+\.\S+$/
 export default function NewsletterSignup() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [privacy, setPrivacy] = useState(false)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | done | error
   const reduce = useReducedMotion()
@@ -19,12 +21,14 @@ export default function NewsletterSignup() {
     const errs = {}
     if (name.trim().length < 2) errs.name = 'Please tell us your name.'
     if (!EMAIL_RE.test(email)) errs.email = 'That email doesn’t look right.'
+    if (!privacy)
+      errs.consent = 'Please agree to the Privacy Policy and Terms & Conditions to continue.'
     setErrors(errs)
     if (Object.keys(errs).length) return
 
     setStatus('sending')
     try {
-      await subscribeNewsletter(name.trim(), email.trim())
+      await subscribeNewsletter(name.trim(), email.trim(), { privacyConsent: privacy })
       setStatus('done')
     } catch {
       setStatus('error')
@@ -94,6 +98,13 @@ export default function NewsletterSignup() {
                   <button type="submit" className="btn btn--sage news-btn" disabled={status === 'sending'}>
                     {status === 'sending' ? 'Signing you up…' : 'Join the list'}
                   </button>
+                  <ConsentFields
+                    idPrefix="nl"
+                    marketing={null}
+                    privacy={privacy}
+                    onPrivacy={setPrivacy}
+                    error={errors.consent}
+                  />
                 </form>
                 {status === 'error' && (
                   <p className="form-status form-status--error" role="alert">

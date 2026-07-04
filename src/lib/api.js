@@ -65,26 +65,32 @@ async function devFallback(endpoint, payload, err) {
 
 /**
  * Lead magnet: email-gated "Seasonal Deep-Clean Guide" download.
+ * `consents` = { marketingConsent, privacyConsent } — privacyConsent is
+ * required (the form refuses to submit without it); marketingConsent is
+ * the optional opt-in that also subscribes them to the newsletter.
  * Serverless side: /api/lead-magnet.js (Resend delivery).
  * TODO: replace with real Supabase insert / storage call
  * (e.g. table `lead_magnet_signups`) when wiring Supabase.
  */
-export function subscribeForLeadMagnet(email) {
-  return post('/api/lead-magnet', { email })
+export function subscribeForLeadMagnet(email, consents = {}) {
+  return post('/api/lead-magnet', { email, ...consents })
 }
 
 /**
- * Newsletter signup. Serverless side: /api/newsletter.js.
+ * Newsletter signup. Joining the list is itself the marketing consent;
+ * `consents.privacyConsent` is required by the form.
+ * Serverless side: /api/newsletter.js.
  * TODO: replace with real Supabase insert
  * (e.g. table `newsletter_subscribers`) when wiring Supabase.
  */
-export function subscribeNewsletter(name, email) {
-  return post('/api/newsletter', { name, email })
+export function subscribeNewsletter(name, email, consents = {}) {
+  return post('/api/newsletter', { name, email, ...consents })
 }
 
 /**
  * Contact / booking form. Serverless side: /api/contact.js.
- * `data` = { name, email, phone, serviceType, message }.
+ * `data` = { name, email, phone, serviceType, message,
+ *            marketingConsent, privacyConsent }.
  * TODO: replace with real Supabase insert
  * (e.g. table `contact_requests`) when wiring Supabase.
  */

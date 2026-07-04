@@ -41,17 +41,25 @@ export default async function handler(req, res) {
     })
   }
 
-  const { email } = req.body || {}
+  const { email, marketingConsent, privacyConsent } = req.body || {}
   if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
     return res.status(400).json({ error: 'A valid email is required.' })
   }
+  if (privacyConsent !== true) {
+    return res.status(400).json({ error: 'Please agree to the Privacy Policy and Terms & Conditions.' })
+  }
 
   try {
+    // Marketing consent is optional; if given, this signup also joins the
+    // newsletter list. TODO (Supabase): record both consent flags with the row.
     await sendEmail({
       to: OWNER_EMAIL,
       subject: 'New Seasonal Deep-Clean Guide download',
       replyTo: email,
-      html: `<p><strong>${esc(email)}</strong> downloaded the Seasonal Deep-Clean Guide from the website.</p>`,
+      html: `
+        <p><strong>${esc(email)}</strong> downloaded the Seasonal Deep-Clean Guide from the website.</p>
+        <p>Marketing consent: <strong>${marketingConsent ? 'YES — also subscribe them to the newsletter' : 'no'}</strong><br/>
+        Privacy Policy &amp; Terms agreed: yes</p>`,
     })
 
     try {

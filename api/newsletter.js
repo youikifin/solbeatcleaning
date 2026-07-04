@@ -47,18 +47,23 @@ export default async function handler(req, res) {
     })
   }
 
-  const { name, email } = req.body || {}
+  const { name, email, privacyConsent } = req.body || {}
   if (!name || !email || !/^\S+@\S+\.\S+$/.test(email)) {
     return res.status(400).json({ error: 'A valid name and email are required.' })
+  }
+  if (privacyConsent !== true) {
+    return res.status(400).json({ error: 'Please agree to the Privacy Policy and Terms & Conditions.' })
   }
 
   try {
     // Notify Beatrice of the new subscriber — deliverable from day one.
+    // TODO (Supabase): record the consent flag with the row.
     await sendEmail({
       to: OWNER_EMAIL,
       subject: `New newsletter subscriber: ${name}`,
       replyTo: email,
-      html: `<p><strong>${esc(name)}</strong> (${esc(email)}) just joined the SolBeat list via the website.</p>`,
+      html: `<p><strong>${esc(name)}</strong> (${esc(email)}) just joined the SolBeat list via the website.</p>
+        <p>Privacy Policy &amp; Terms agreed: yes</p>`,
     })
 
     // Welcome email to the subscriber — best-effort until the sending

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { submitContactForm } from '../lib/api.js'
 import { EASE } from './motion-helpers.jsx'
+import ConsentFields from './ConsentFields.jsx'
 import './forms.css'
 
 const EMAIL_RE = /^\S+@\S+\.\S+$/
@@ -11,6 +12,8 @@ const INITIAL = { name: '', email: '', phone: '', serviceType: '', message: '' }
 
 export default function ContactForm() {
   const [data, setData] = useState(INITIAL)
+  const [marketing, setMarketing] = useState(false)
+  const [privacy, setPrivacy] = useState(false)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | sending | done | error
   const reduce = useReducedMotion()
@@ -28,6 +31,8 @@ export default function ContactForm() {
     if (!data.serviceType) errs.serviceType = 'Please choose residential or commercial.'
     if (data.message.trim().length < 10)
       errs.message = 'Tell us a little about the space — a sentence or two helps us quote accurately.'
+    if (!privacy)
+      errs.consent = 'Please agree to the Privacy Policy and Terms & Conditions to continue.'
     return errs
   }
 
@@ -44,6 +49,8 @@ export default function ContactForm() {
         phone: data.phone.trim(),
         serviceType: data.serviceType,
         message: data.message.trim(),
+        marketingConsent: marketing,
+        privacyConsent: privacy,
       })
       setStatus('done')
     } catch {
@@ -151,6 +158,15 @@ export default function ContactForm() {
           <p className="field-error" id="cf-message-err">{errors.message}</p>
         )}
       </div>
+
+      <ConsentFields
+        idPrefix="cf"
+        marketing={marketing}
+        onMarketing={setMarketing}
+        privacy={privacy}
+        onPrivacy={setPrivacy}
+        error={errors.consent}
+      />
 
       <div className="cf-actions">
         <button type="submit" className="btn" disabled={status === 'sending'}>

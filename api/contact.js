@@ -38,12 +38,17 @@ export default async function handler(req, res) {
     })
   }
 
-  const { name, email, phone, serviceType, message } = req.body || {}
+  const { name, email, phone, serviceType, message, marketingConsent, privacyConsent } =
+    req.body || {}
   if (!name || !email || !/^\S+@\S+\.\S+$/.test(email) || !message) {
     return res.status(400).json({ error: 'Name, a valid email, and a message are required.' })
   }
+  if (privacyConsent !== true) {
+    return res.status(400).json({ error: 'Please agree to the Privacy Policy and Terms & Conditions.' })
+  }
 
   try {
+    // TODO (Supabase): record both consent flags with the row.
     await sendEmail({
       to: OWNER_EMAIL,
       subject: `Estimate request (${esc(serviceType || 'General')}) — ${esc(name)}`,
@@ -55,7 +60,9 @@ export default async function handler(req, res) {
         <p><strong>Phone:</strong> ${esc(phone || '—')}</p>
         <p><strong>Service type:</strong> ${esc(serviceType || '—')}</p>
         <p><strong>Message:</strong></p>
-        <p>${esc(message).replace(/\n/g, '<br/>')}</p>`,
+        <p>${esc(message).replace(/\n/g, '<br/>')}</p>
+        <p><strong>Marketing consent:</strong> ${marketingConsent ? 'YES — may be emailed promotions/newsletter' : 'no'}<br/>
+        <strong>Privacy Policy &amp; Terms agreed:</strong> yes</p>`,
     })
     return res.status(200).json({ ok: true })
   } catch (err) {

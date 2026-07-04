@@ -1,0 +1,71 @@
+/* Privacy Policy & Terms pages — quiet, readable prose. */
+
+.legal {
+  max-width: 760px;
+}
+
+.legal-updated {
+  font: 600 19px/1.3 var(--hand);
+  color: var(--sage-2);
+  margin-bottom: 30px;
+}
+
+.legal-block {
+  margin-bottom: 36px;
+  padding-bottom: 30px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.legal-block:last-child {
+  border-bottom: none;
+}
+
+.legal-block h2 {
+  font: 600 clamp(21px, 2.4vw, 27px)/1.25 var(--serif);
+  margin-bottom: 14px;
+}
+
+.legal-block p {
+  color: var(--ink-2);
+  margin-bottom: 12px;
+}
+
+.legal-block p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-block a {
+  color: var(--terracotta-2);
+  font-weight: 600;
+  border-bottom: 2px solid var(--gold);
+}
+
+.legal-block a:hover {
+  color: var(--terracotta);
+}
+
+.legal-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legal-block li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--ink-2);
+}
+
+.legal-block li::before {
+  content: '✷';
+  position: absolute;
+  left: 2px;
+  color: var(--gold);
+}
+
+.legal-block strong {
+  color: var(--ink);
+}

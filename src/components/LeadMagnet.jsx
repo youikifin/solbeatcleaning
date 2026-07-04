@@ -4,26 +4,34 @@ import { subscribeForLeadMagnet } from '../lib/api.js'
 import { leadMagnet } from '../content/content.js'
 import { Reveal, EASE } from './motion-helpers.jsx'
 import { Tape, Sticker } from './Paper.jsx'
+import ConsentFields from './ConsentFields.jsx'
 import './forms.css'
 
 const EMAIL_RE = /^\S+@\S+\.\S+$/
 
 export default function LeadMagnet() {
   const [email, setEmail] = useState('')
+  const [marketing, setMarketing] = useState(false)
+  const [privacy, setPrivacy] = useState(false)
   const [error, setError] = useState('')
+  const [consentError, setConsentError] = useState('')
   const [status, setStatus] = useState('idle') // idle | sending | done | error
   const reduce = useReducedMotion()
 
   async function onSubmit(e) {
     e.preventDefault()
-    if (!EMAIL_RE.test(email)) {
-      setError('Please enter a valid email so we know where to send it.')
-      return
-    }
-    setError('')
+    const emailBad = !EMAIL_RE.test(email)
+    setError(emailBad ? 'Please enter a valid email so we know where to send it.' : '')
+    setConsentError(
+      privacy ? '' : 'Please agree to the Privacy Policy and Terms & Conditions to continue.'
+    )
+    if (emailBad || !privacy) return
     setStatus('sending')
     try {
-      await subscribeForLeadMagnet(email.trim())
+      await subscribeForLeadMagnet(email.trim(), {
+        marketingConsent: marketing,
+        privacyConsent: privacy,
+      })
       setStatus('done')
     } catch {
       setStatus('error')
@@ -101,6 +109,14 @@ export default function LeadMagnet() {
                         <p className="field-error" id="lm-email-err">{error}</p>
                       )}
                     </div>
+                    <ConsentFields
+                      idPrefix="lm"
+                      marketing={marketing}
+                      onMarketing={setMarketing}
+                      privacy={privacy}
+                      onPrivacy={setPrivacy}
+                      error={consentError}
+                    />
                     <button type="submit" className="btn" disabled={status === 'sending'}>
                       {status === 'sending' ? 'Sending…' : 'Send me the guide'}
                     </button>
