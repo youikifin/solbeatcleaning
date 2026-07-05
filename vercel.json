@@ -1,3 +1,0 @@
-{
-  "$comment": "No SPA rewrite needed: every route is pre-rendered to a real file by scripts/prerender.mjs, and dist/404.html serves unknown paths with a proper 404 status. /api functions are routed natively by Vercel."
-}
