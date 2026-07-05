@@ -115,6 +115,16 @@
     />
   </head>
   <body>
+    <noscript>
+      <style>
+        /* Pages are pre-rendered; motion sets initial opacity/transform
+           inline. Without JS, force everything visible. */
+        [style*='opacity'] {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
