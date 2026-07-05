@@ -1,0 +1,33 @@
+# SolBeat Cleaning Inc.
+
+> Residential and commercial cleaning services in Steinbach, Manitoba, Canada.
+> A one-woman company founded by Beatrice Akinleye, serving the Eastman region:
+> Steinbach, Mitchell, Blumenort, La Broquerie, Kleefeld, Giroux, Ste. Anne,
+> New Bothwell, Grunthal, Niverville, and Landmark.
+
+Motto: "We don't cut corners. We clean them."
+
+Key facts:
+- Founder: Beatrice Akinleye (Founder & CEO) — over a decade of experience in
+  cleaning, quality assurance, and operations; post-graduate certificates in
+  Quality Assurance, Manufacturing Management, and Supply Chain Management
+  (Conestoga College).
+- Address: 300 First St, Steinbach, MB R5G 0T6, Canada
+- Phone: +1 (204) 381-8505
+- Hours: 8:00 AM – 6:00 PM, 7 days a week
+- Free written estimates; insured, background-checked, and trained.
+- Guarantee: report any concern within 24 hours and it is corrected at no
+  extra charge.
+- Payment: cash, credit/debit, e-transfer, or secure online card payment
+  (Stripe); due after service unless on a recurring plan.
+
+## Pages
+
+- [Home](https://solbeatcleaning.online/): Overview of cleaning services in Steinbach
+- [About](https://solbeatcleaning.online/about): Beatrice Akinleye's background and the company philosophy
+- [Residential](https://solbeatcleaning.online/residential): House cleaning — move in/out, spring cleaning, one-time and recurring cleans, detail dusting, kitchen appliances, bathrooms, junk removal
+- [Commercial](https://solbeatcleaning.online/commercial): Commercial cleaning — common areas, recurring contracts, pipeline cleaning, junk removal
+- [Blog](https://solbeatcleaning.online/blog): Practical cleaning guides and checklists
+- [Contact](https://solbeatcleaning.online/contact): Free estimate form, map, hours, and FAQ
+- [Privacy Policy](https://solbeatcleaning.online/privacy)
+- [Terms & Conditions](https://solbeatcleaning.online/terms)

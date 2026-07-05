@@ -103,10 +103,11 @@ export function PlaceholderPhoto({
           {line}
         </text>
       ))}
+      {/* short badge text so it doesn't register as page copy for SEO */}
       <g>
-        <rect x="16" y={h - 46} width="208" height="30" rx="4" fill="#2e2418" opacity="0.72" />
+        <rect x="16" y={h - 46} width="140" height="30" rx="4" fill="#2e2418" opacity="0.72" />
         <text
-          x="120"
+          x="86"
           y={h - 26}
           textAnchor="middle"
           fontFamily="Karla, sans-serif"
@@ -115,7 +116,7 @@ export function PlaceholderPhoto({
           letterSpacing="1.5"
           fill="#f6efe1"
         >
-          PLACEHOLDER PHOTO
+          PLACEHOLDER
         </text>
       </g>
     </svg>

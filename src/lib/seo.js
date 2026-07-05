@@ -5,10 +5,12 @@ import { blogPosts, resources } from '../content/content.js'
 
 export const SITE_URL = 'https://solbeatcleaning.online'
 
+/* Descriptions are kept between 120 and 160 characters — the range
+   search engines display without truncating. */
 const DEFAULT = {
   title: 'Cleaning Services in Steinbach, MB | SolBeat Cleaning Inc.',
   description:
-    'Looking for cleaning services in Steinbach? SolBeat Cleaning offers residential housekeeping and commercial cleaning across the Eastman region — insured, 7 days a week, with a 24-hour guarantee. Free estimates: +1 (204) 381-8505.',
+    'Cleaning services in Steinbach & the Eastman region — residential housekeeping and commercial cleaning, insured, 7 days a week. Free estimates.',
 }
 
 const ROUTES = {
@@ -21,12 +23,12 @@ const ROUTES = {
   '/residential': {
     title: 'House Cleaning in Steinbach, MB — Residential Services | SolBeat Cleaning',
     description:
-      'Need a "clean my house" service in Steinbach? Move in/move out cleans, spring cleaning, recurring housekeeping, detail dusting, and more across the Eastman region. Free estimates.',
+      'Need a "clean my house" service in Steinbach? Move-in/out cleans, spring cleaning, and recurring housekeeping across the Eastman region. Free estimates.',
   },
   '/commercial': {
     title: 'Commercial Cleaning in Steinbach & Southern Manitoba | SolBeat Cleaning',
     description:
-      'Commercial cleaning services in Steinbach and southern Manitoba: common areas, recurring contracts, pipeline cleaning, and junk removal — scoped in writing, insured, guaranteed.',
+      'Commercial cleaning in Steinbach & southern Manitoba: common areas, recurring contracts, pipeline cleaning, junk removal. Scoped in writing, insured.',
   },
   '/blog': {
     title: 'Cleaning Guides & Checklists | SolBeat Cleaning, Steinbach MB',

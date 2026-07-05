@@ -1,11 +1,36 @@
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { business, serviceAreas } from '../content/content.js'
 import PageHero from '../components/PageHero.jsx'
 import ContactForm from '../components/ContactForm.jsx'
-import BusinessMap from '../components/BusinessMap.jsx'
 import FAQAccordion from '../components/FAQAccordion.jsx'
 import { Reveal } from '../components/motion-helpers.jsx'
 import { TornEdge, Tape } from '../components/Paper.jsx'
 import './contact.css'
+
+/* Leaflet is the heaviest dependency on the site and only this page
+   uses it — load it lazily so it stays out of the main bundle. The
+   mounted gate also keeps it away from build-time pre-rendering
+   (Leaflet needs a real browser `window`). */
+const BusinessMap = lazy(() => import('../components/BusinessMap.jsx'))
+
+function MapFallback() {
+  return (
+    <div className="sb-map-frame" aria-hidden="true">
+      <div className="sb-map" />
+    </div>
+  )
+}
+
+function LazyMap() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  if (!mounted) return <MapFallback />
+  return (
+    <Suspense fallback={<MapFallback />}>
+      <BusinessMap />
+    </Suspense>
+  )
+}
 
 export default function Contact() {
   return (
@@ -70,7 +95,7 @@ export default function Contact() {
             Where you&rsquo;ll find us
           </Reveal>
           <Reveal delay={0.1}>
-            <BusinessMap />
+            <LazyMap />
           </Reveal>
         </div>
       </section>

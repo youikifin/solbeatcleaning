@@ -194,6 +194,58 @@ export default function Home() {
       {/* ---------------- lead magnet + newsletter ---------------- */}
       <LeadMagnet />
       <NewsletterSignup />
+
+      {/* ---------------- local-SEO prose ---------------- */}
+      <TornEdge color="var(--paper-2)" />
+      <section className="section section--deep seo-prose" aria-labelledby="local-heading">
+        <div className="wrap">
+          <h2 className="h-lg" id="local-heading">
+            Cleaning services in Steinbach and the Eastman region
+          </h2>
+          <div className="seo-prose-cols">
+            <div>
+              <p>
+                When you search for cleaning services in Steinbach, what you usually want
+                is simple: someone local, insured, and careful, who treats your home or
+                business like their own. SolBeat Cleaning Inc. is exactly that — a
+                one-woman cleaning company based at 300 First St in Steinbach, Manitoba,
+                founded by Beatrice Akinleye and serving the whole Eastman region:
+                Mitchell, Blumenort, La Broquerie, Kleefeld, Giroux, Ste. Anne, New
+                Bothwell, Grunthal, Niverville, and Landmark.
+              </p>
+              <h3>Housekeeping for every kind of home</h3>
+              <p>
+                Whether it&rsquo;s a one-time &ldquo;please clean my house before the
+                guests arrive&rdquo; visit, a move-out clean that protects your deposit,
+                or weekly and bi-weekly housekeeping that keeps life manageable, every
+                home runs on a written checklist — detail dusting, kitchen appliances,
+                bathrooms, baseboards, and the corners other services skip. Explore our{' '}
+                <Link to="/residential">residential cleaning services</Link>.
+              </p>
+            </div>
+            <div>
+              <h3>Commercial cleaning for southern Manitoba businesses</h3>
+              <p>
+                Offices, storefronts, and common areas across Steinbach and southern
+                Manitoba get the same discipline: a documented scope, a recurring
+                schedule that stays out of your way, and a cleaner with a decade of
+                quality-assurance experience behind her. See our{' '}
+                <Link to="/commercial">commercial cleaning services</Link>.
+              </p>
+              <h3>It starts with a free estimate</h3>
+              <p>
+                Every job begins with a free written estimate — no obligation, no
+                pressure. Call{' '}
+                <a href={business.phoneHref}>{business.phone}</a> any day between 8 AM
+                and 6 PM, or <Link to="/contact">request your free estimate online</Link>.
+                And if anything isn&rsquo;t right after your clean, report it within 24
+                hours and it&rsquo;s corrected at no extra charge.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <TornEdge color="var(--paper-2)" flip />
     </>
   )
 }
