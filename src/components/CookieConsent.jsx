@@ -67,15 +67,16 @@ export default function CookieConsent() {
           transition={{ duration: 0.5, ease: EASE }}
         >
           <Tape tone="gold" angle={-5} style={{ top: -13, left: '50%', marginLeft: -50 }} />
-          <h2 className="cookie-title hand">One small cookie?</h2>
+          <h2 className="cookie-title hand">A few small cookies?</h2>
           <p className="cookie-text">
-            We&rsquo;d like to use one analytics cookie to learn which pages help people
-            most. No ads, no selling data — and nothing is set unless you say yes.
-            Details in the <Link to="/privacy">Privacy Policy</Link>.
+            We&rsquo;d like to use analytics and marketing cookies (Google &amp; Meta) to
+            learn which pages help people most and measure our ads. We never sell your
+            data — and nothing is set unless you say yes. Details in the{' '}
+            <Link to="/privacy">Privacy Policy</Link>.
           </p>
           <div className="cookie-actions">
             <button className="btn cookie-btn" onClick={() => decide('accepted')}>
-              Accept analytics
+              Accept cookies
             </button>
             <button className="btn btn--ghost cookie-btn" onClick={() => decide('declined')}>
               Decline

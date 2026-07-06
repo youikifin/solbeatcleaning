@@ -105,13 +105,14 @@ export default function Privacy() {
           </Reveal>
 
           <Reveal as="div" className="legal-block" y={18}>
-            <h2>Cookies and analytics</h2>
+            <h2>Cookies, analytics, and advertising</h2>
             <p>
-              On your first visit we ask whether you accept analytics tracking. Google
-              Tag Manager and Google Analytics are loaded <em>only if you accept</em> —
-              if you decline, no analytics cookies are set at all. You can change your
-              choice any time via the &ldquo;Cookie preferences&rdquo; link in the
-              footer.
+              On your first visit we ask whether you accept analytics and marketing
+              cookies. Google Tag Manager, Google Analytics, and the Meta (Facebook)
+              Pixel — which helps us measure our advertising — are loaded{' '}
+              <em>only if you accept</em>. If you decline, none of them are set at all.
+              You can change your choice any time via the &ldquo;Cookie
+              preferences&rdquo; link in the footer.
             </p>
           </Reveal>
 

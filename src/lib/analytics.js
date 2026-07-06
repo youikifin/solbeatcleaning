@@ -17,6 +17,7 @@
    below or page views will be counted twice. */
 
 export const GTM_ID = 'GTM-MK79RMGD'
+export const META_PIXEL_ID = '1680829386523944'
 
 export const GA_MEASUREMENT_ID = (
   import.meta.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''
@@ -25,6 +26,34 @@ export const GA_MEASUREMENT_ID = (
 export function loadAnalytics() {
   loadGtm()
   loadGa4()
+  loadMetaPixel()
+}
+
+/* SPA route changes don't reload the page, so the pixel's automatic
+   PageView only fires once. Layout.jsx calls this on each navigation. */
+export function trackPageView() {
+  if (window.fbq) window.fbq('track', 'PageView')
+}
+
+/* Meta Pixel base code (consent-gated equivalent of the stock snippet;
+   the noscript <img> variant is intentionally omitted — it cannot be
+   consent-gated). */
+function loadMetaPixel() {
+  if (window.fbq) return
+  const n = (window.fbq = function () {
+    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+  })
+  if (!window._fbq) window._fbq = n
+  n.push = n
+  n.loaded = true
+  n.version = '2.0'
+  n.queue = []
+  const script = document.createElement('script')
+  script.async = true
+  script.src = 'https://connect.facebook.net/en_US/fbevents.js'
+  document.head.appendChild(script)
+  window.fbq('init', META_PIXEL_ID)
+  window.fbq('track', 'PageView')
 }
 
 function loadGtm() {
