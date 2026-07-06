@@ -108,9 +108,10 @@ export default function Privacy() {
             <h2>Cookies and analytics</h2>
             <p>
               On your first visit we ask whether you accept analytics tracking. Google
-              Analytics is loaded <em>only if you accept</em> — if you decline, no
-              analytics cookies are set at all. You can change your choice any time via
-              the &ldquo;Cookie preferences&rdquo; link in the footer.
+              Tag Manager and Google Analytics are loaded <em>only if you accept</em> —
+              if you decline, no analytics cookies are set at all. You can change your
+              choice any time via the &ldquo;Cookie preferences&rdquo; link in the
+              footer.
             </p>
           </Reveal>
 
