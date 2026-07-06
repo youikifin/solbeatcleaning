@@ -38,6 +38,31 @@
   max-width: 34ch;
 }
 
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--paper);
+  background: rgba(246, 239, 225, 0.1);
+  border: 1px solid rgba(246, 239, 225, 0.18);
+  transition: background 0.2s, color 0.2s, transform 0.2s var(--ease-out);
+}
+
+.footer-social-link:hover {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(-2px) rotate(-3deg);
+}
+
 .footer-head {
   font: 700 13px/1 var(--sans);
   letter-spacing: 0.2em;

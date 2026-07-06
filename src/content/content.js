@@ -37,6 +37,22 @@ export const serviceAreas = [
   'Landmark',
 ]
 
+/* Social profiles — rendered as icons in the footer, and (once live)
+   they should also be added to the LocalBusiness "sameAs" array in
+   index.html's JSON-LD schema so Google links them to the business.
+
+   HOW TO ACTIVATE: create the profile, then paste its URL below. An
+   entry with an empty url renders nothing, so no dead links ship.
+   Supported platform keys: facebook, instagram, x, youtube, linkedin.
+
+   Example once ready:
+     { platform: 'facebook', url: 'https://www.facebook.com/solbeatcleaning' },
+*/
+export const socialLinks = [
+  { platform: 'facebook', url: '' },
+  { platform: 'instagram', url: '' },
+]
+
 export const founder = {
   name: 'Beatrice Akinleye',
   title: 'Founder & CEO',
